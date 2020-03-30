@@ -185,23 +185,33 @@ const wordsCount = [
   'matter'
 ];
 
+// function howManyTimes(arr, word) { -> solution works but weird syntax
+//   if (arr.length === 0){
+//     return 0;
+//   } else if (arr.indexOf(word) === -1) {
+//     return 0;
+//   } else {
+//     const countedWords = arr.reduce(function(arr, word){
+//       if (word in arr) {
+//         arr[word]++;
+//       } else {
+//         arr[word] = 1;
+//       }
+//       return arr; 
+//     }, []);
+//   return countedWords[word];
+//   }
+// }
+
 function howManyTimes(arr, word) {
-  if (arr.length === 0){
-    return 0;
-  } else if (arr.indexOf(word) === -1) {
-    return 0;
-  } else {
-    const countedWords = arr.reduce(function(arr, word){
-      if (word in arr) {
-        arr[word]++;
-      } else {
-        arr[word] = 1;
-      }
-      return arr; 
-    }, []);
-  return countedWords[word];
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+  if (arr[i] === word) {
+  count++;
   }
-}
+  }
+  return count;
+  }
 
 // Iteration #8: Bonus
 
